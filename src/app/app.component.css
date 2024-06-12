@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf");
+}
+
+:root {
+  --bs-primary: #0A8967;
+}
+
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}

@@ -1,0 +1,17 @@
+.badge {
+  width: 4.25rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: red;
+  border-radius: 100px;
+  font-size: xx-small;
+  font-family: Inter;
+}
+
+p {
+  font-family: Inter;
+  font-weight: 450;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
