@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AcademyTask</title>
-  </head>
-  <body>
-    <app-header></app-header>
-    <app-card></app-card>
-  </body>
-</html>
+<header>
+  <app-header *ngIf="router.url !== '/login' && router.url !== '/register'"></app-header>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

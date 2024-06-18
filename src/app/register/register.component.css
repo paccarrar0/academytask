@@ -1,0 +1,33 @@
+.logo {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 5px 2px #0C5149;
+  border: none;
+}
+
+.button {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+.btn {
+  background-color: #0C5149;
+  color: #ffff;
+}
+
+p {
+  font-family: Inter;
+  font-size: 0.9rem;
+}
+
+p a:hover {
+  color: #09C184;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
