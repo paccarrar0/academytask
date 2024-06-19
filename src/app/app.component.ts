@@ -4,6 +4,7 @@ import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
    CardComponent,
    HeaderComponent,
    LoginComponent,
-   CommonModule
+   CommonModule,
+   HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

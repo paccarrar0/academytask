@@ -1,0 +1,15 @@
+.button {
+  max-width: 40%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+button {
+  background-color: #0A8967;
+  color: #ffff;
+}
+
+button:hover{
+  background-color: #0A8967;
+  color: #ffff;
+}

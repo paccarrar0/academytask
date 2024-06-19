@@ -13,5 +13,13 @@ p {
   font-family: Inter;
   font-weight: 450;
   font-size: 0.9rem;
-  margin-bottom: 2rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+}
+
+h4 {
+  font-size: small;
+  font-weight: 400;
 }

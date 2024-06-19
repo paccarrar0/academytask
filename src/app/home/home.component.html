@@ -1,1 +1,10 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let task of tasks">
+      <app-card [task]="task"></app-card>
+    </div>
+  </div>
+  <div class="row">
+    <button class="button btn">Nova Tarefa</button>
+  </div>
+</div>
