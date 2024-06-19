@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Completar o projeto",
+      "description": "Desenvolver todas as funcionalidades do projeto Angular.",
+      "priority": "Alta"
+    },
+    {
+      "id": 2,
+      "name": "Configurar a API",
+      "description": "Implementar uma API REST fake para o projeto Angular.",
+      "priority": "Média"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "João",
+      "email": "joao@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Maria",
+      "email": "maria@example.com"
+    }
+  ]
+}
