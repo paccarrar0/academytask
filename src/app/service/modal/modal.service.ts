@@ -5,16 +5,17 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ModalService {
-  private modalState = new Subject<boolean>();
-  modalState$ = this.modalState.asObservable();
+  private modalSubject = new Subject<any>();
 
-  open() {
-    console.log("Deu boa")
-    this.modalState.next(true);
+  openModal(modalId: string) {
+    this.modalSubject.next({ action: 'open', id: modalId });
   }
 
-  close() {
-    console.log("Fechou de boa")
-    this.modalState.next(false);
+  closeModal(modalId: string) {
+    this.modalSubject.next({ action: 'close', id: modalId });
+  }
+
+  getModalEvents() {
+    return this.modalSubject.asObservable();
   }
 }

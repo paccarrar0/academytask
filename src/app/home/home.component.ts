@@ -6,7 +6,7 @@ import { CardComponent } from '../card/card.component';
 import { NewModalComponent} from '../new-modal/new-modal.component'
 import { DescModalComponent } from '../desc-modal/desc-modal.component';
 import { ModalService } from '../service/modal/modal.service';
-import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-home',
@@ -15,24 +15,29 @@ import { Subscription } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
   constructor(
     private _taskService: TaskService,
     private modalService: ModalService
   ) {}
-
-  isModalOpen = false;
-  private modalSubscription!: Subscription;
+  
   public tasks!: Task[];
+  private name!: string;
+  private description!: string;
+  private priority!: string;
+  private date!: string;
 
-  public value: string = "false";
+  newTask: Task = new Task('', this.name, this.description, this.priority, this.date);
 
-  openDescModal(event: any) {
-    this.value = event;
-    console.log(event)
+  openNewModal() {
+    this.modalService.openModal('newModal');
   }
 
-  ngOnInit(): void {
+  openDescModal() {
+    this.modalService.openModal('descModal');
+  }
+
+  loadTasks() {
     this._taskService.getTasks().subscribe((retorno) => {
       this.tasks = retorno.map((item) => {
         return new Task(
@@ -44,21 +49,18 @@ export class HomeComponent implements OnInit, OnDestroy {
         );
       });
     });
-
-    this.modalSubscription = this.modalService.modalState$.subscribe(
-      (isOpen) => (this.isModalOpen = isOpen)
-    );
   }
 
-  ngOnDestroy() {
-    this.modalSubscription.unsubscribe();
+  ngOnInit(): void {
+    this.loadTasks();
   }
 
-  openModal() {
-    this.modalService.open();
-  }
-
-  closeModal() {
-    this.modalService.close();
+  onSubmit() {
+    console.log("Enviado")
+    this._taskService.setTasks(this.newTask).subscribe(() => {
+      this.loadTasks();
+      this.newTask = new Task('', '', '', '', '');
+    location.reload();
+    });
   }
 }

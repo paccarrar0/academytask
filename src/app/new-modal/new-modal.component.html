@@ -1,4 +1,4 @@
-<div class="modal">
+<div *ngIf="showModal" class="modal">
   <div class="modal-content container gap-2">
     <div class="row gap-2">
       <div class="input-group">
@@ -11,7 +11,7 @@
         <span class="input-group-text"
           ><img src="../../assets/icons/calendar2-week-fill.svg" alt="pen"
         /></span>
-        <input class="form-control" type="text" placeholder="Data" />
+        <input class="form-control" type="date" placeholder="Data" />
       </div>
     </div>
     <div class="row mt-2 ms-0">
@@ -49,10 +49,10 @@
     </div>
     <div class="row ms-0 mb-4">
       <p class="ps-0 mb-1">Descrição:</p>
-      <textarea class="form-control" name="description" id=""></textarea>
+      <textarea class="form-control" name="description"></textarea>
     </div>
     <div class="d-flex justify-content-center gap-3">
-      <button class="submit-button btn">Salvar</button>
+      <button class="submit-button btn" type="submit" (click)="onSubmit()">Salvar</button>
       <button class="close-button btn" (click)="close()">Cancelar</button>
     </div>
   </div>

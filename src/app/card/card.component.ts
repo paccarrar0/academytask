@@ -16,8 +16,7 @@ export class CardComponent {
   @Output() openParentModal: EventEmitter<any> = new EventEmitter<any>();
 
   openModal() {
-    this.openParentModal.emit(true);
-    console.log(false)
+    this.openParentModal.emit();
   }
 }
 

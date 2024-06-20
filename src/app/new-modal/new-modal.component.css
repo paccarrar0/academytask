@@ -13,12 +13,12 @@
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+  min-width: 15rem
 }
-
 .submit-button{
   background-color: #0A8967;
   color: #fff;
