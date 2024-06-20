@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let task of tasks">
-      <app-card [task]="task"></app-card>
+      <app-card (openParentModal)="openModal()" [task]="task"></app-card>
     </div>
   </div>
   <div class="row">
-    <button class="button btn">Nova Tarefa</button>
+    <app-new-modal *ngIf="isModalOpen"></app-new-modal>
+    <button (click)="openModal()" class="button btn">Nova Tarefa</button>
   </div>
 </div>

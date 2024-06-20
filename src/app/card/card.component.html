@@ -10,10 +10,10 @@
     </div>
   </div>
   <p class="ms-2">{{ task.name }}</p>
-  <div class="mb-2 ms-2 d-flex">
+  <div class="mb-2 ms-2 d-flex align-items-center">
     <img src="../../assets/icons/stopwatch.svg" alt="watch" />
-    <h4 class="mb-0 ms-1">{{task.date}}</h4>
+    <h4 class="ms-1">{{task.date}}</h4>
     <img class="ms-2" src="../../assets/icons/cloud-lightning-rain.svg" alt="lightning"> <!--Proveniente da API-->
-    <a href=""><img class="ms-2" src="../../assets/icons/text-left.svg" alt="text"></a>
+    <button (click)="openModal()"><img class="ms-2" src="../../assets/icons/text-left.svg" alt="text"></button>
   </div>
 </div>

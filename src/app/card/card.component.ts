@@ -1,5 +1,4 @@
-import { Component, Input, Output, output } from '@angular/core';
-import { EventEmitter } from 'node:stream';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -9,6 +8,16 @@ import { EventEmitter } from 'node:stream';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
+
+  constructor(){}
+
   @Input() task: any;
+
+  @Output() openParentModal: EventEmitter<any> = new EventEmitter<any>();
+
+  openModal() {
+    this.openParentModal.emit(true);
+    console.log(false)
+  }
 }
 
