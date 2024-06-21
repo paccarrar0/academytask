@@ -7,12 +7,13 @@ import { CardComponent } from '../card/card.component';
 import { NewModalComponent} from '../new-modal/new-modal.component'
 import { DescModalComponent } from '../desc-modal/desc-modal.component';
 import { ModalService } from '../service/modal/modal.service';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CardComponent, NewModalComponent, DescModalComponent],
+  imports: [CommonModule, CardComponent, NewModalComponent, DescModalComponent, DatePipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
