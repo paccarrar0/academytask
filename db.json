@@ -1,59 +1,18 @@
 {
   "tasks": [
     {
+      "id": "0",
+      "name": "Teste",
+      "description": "Teste Teste Teste",
+      "priority": "Média",
+      "date": "2024-06-15"
+    },
+    {
       "id": "1",
-      "name": "Projeto de web 3",
-      "description": "Sei la o que, testando essa merda",
-      "priority": "Alta",
-      "date": "23/06/2024"
-    },
-    {
-      "id": "2",
-      "name": "Atividade Devops 1",
-      "description": "Sei la o que, testando essa merda",
-      "priority": "Media",
-      "date": "10/07/2024"
-    },
-    {
-      "id": "3",
-      "name": "Dormir",
-      "description": "Sei la o que, testando essa merda",
+      "name": "fsfsfsfsfsf",
+      "description": "fsfsfsfsfs",
       "priority": "Baixa",
-      "date": "30/07/2024"
-    },
-    {
-      "id": "",
-      "name": "",
-      "description": "",
-      "priority": "",
-      "date": ""
-    },
-    {
-      "id": "",
-      "name": "",
-      "description": "",
-      "priority": "",
-      "date": ""
-    },
-    {
-      "id": "",
-      "name": "",
-      "description": "",
-      "priority": "",
-      "date": ""
-    },
-    {
-      "id": "",
-      "name": "",
-      "description": "",
-      "priority": "",
-      "date": ""
-    },
-    {
-      "id": ""
-    },
-    {
-      "id": ""
+      "date": "2024-06-11"
     }
   ]
 }

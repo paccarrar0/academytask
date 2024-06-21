@@ -24,3 +24,13 @@ h4 {
   font-weight: 400;
   margin-bottom: 0rem;
 }
+
+.high-priority {
+  background-color: #FF0000;
+}
+.medium-priority {
+  background-color: #F4C430;
+}
+.low-priority {
+  background-color: #09C184;
+}

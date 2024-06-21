@@ -9,6 +9,7 @@ export class ModalService {
 
   openModal(modalId: string) {
     this.modalSubject.next({ action: 'open', id: modalId });
+    console.log('modal service')
   }
 
   closeModal(modalId: string) {

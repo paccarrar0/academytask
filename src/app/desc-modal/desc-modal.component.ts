@@ -11,7 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './desc-modal.component.css'
 })
 export class DescModalComponent implements OnInit, OnDestroy {
+  @Input() task: any;
   @Input() modalId!: string;
+
   showModal = false;
   private modalSubscription!: Subscription;
 
