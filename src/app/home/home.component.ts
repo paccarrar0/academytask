@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, ActivatedRoute } from '@angular/router';
 import { TaskService } from '../service/task/task.service';
 import { Task } from '../class/task/task';
 import { CommonModule } from '@angular/common';
@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private _taskService: TaskService,
     private modalService: ModalService,
+    private route: ActivatedRoute
   ) {}
 
   public tasks!: Task[];
@@ -36,13 +37,14 @@ export class HomeComponent implements OnInit {
   public taskId!: string;
   public taskDescription!: string;
   public taskToShow!: Task;
+  public userId!: string;
 
   openNewModal() {
     this.modalService.openModal('newModal');
   }
 
   loadTasks() {
-    this._taskService.getTasks().subscribe((retorno) => {
+    this._taskService.getTasks(this.userId).subscribe((retorno) => {
       this.tasks = retorno.map((item) => {
         return new Task(
           item.name,
@@ -67,6 +69,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.userId = params['userId'];
+    });
+    console.log(this.userId)
     this.loadTasks();
   }
 

@@ -13,6 +13,8 @@ import { RouterLink, Router } from '@angular/router';
 export class CardComponent {
   constructor(private router: Router) {}
 
+  @Input() userId!: string;
+
   @Input() task: any;
 
   @Output() openNewModal: EventEmitter<any> = new EventEmitter<any>();
@@ -22,7 +24,7 @@ export class CardComponent {
   @Output() _openEditModal: EventEmitter<any> = new EventEmitter<any>();
 
   openEditModal(taskId: any) {
-    this.router.navigate(['home/edit', taskId]);
+    this.router.navigate([`/home/${this.userId}/edit/${taskId}`]);
   }
 
   openModal(taskId: string) {

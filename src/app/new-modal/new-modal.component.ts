@@ -57,6 +57,7 @@ export class NewModalComponent implements OnInit, OnDestroy {
       this.description,
       this.priority,
       this.date
+      
     );
     this.submitTask.emit(this.newTask);
   }

@@ -22,6 +22,7 @@ export class EditModalComponent implements OnInit {
   @Output() editTask: EventEmitter<any> = new EventEmitter<any>();
   @Input() modalId!: string;
 
+  public userId!: string;
   public showModal = false;
   public taskId!: string;
   public updatedTask!: Task;
@@ -39,9 +40,11 @@ export class EditModalComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.taskId = params['id'];
 
+    this.route.params.subscribe((params: any) => {
+      //this.userId = params['userId'];
+      this.taskId = params['taskId'];
+    
       if (this.taskId) {
         this.showModal = true;
         this.loadTaskById(this.taskId); // Carregar tarefa específica
@@ -68,8 +71,9 @@ export class EditModalComponent implements OnInit {
   }
 
   closeModal() {
+    console.log(this.router.routerState)
     this.showModal = false;
-    this.router.navigate(['/home']).then(() => location.reload());
+    this.router.navigate(['/home', this.userId]).then(() => location.reload());
   }
 
   onSubmit() {

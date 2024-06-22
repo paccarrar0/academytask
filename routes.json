@@ -1,0 +1,3 @@
+{
+  "/users/:userId/tasks": "/tasks?userId=:userId"
+}

@@ -21,40 +21,40 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  password!: any;
-  showUserError = false
-  showPasswordError = false
+  public userId!: any;
+  public password!: any;
+  public showUserError = false
+  public showPasswordError = false
 
   constructor(private userService: UserService, private router: Router){}
 
   get validateUser(){
     let user = this.users.find((u) => u.name == this.user.name)
-    this.password = user?.password
-    console.log(this.password)
     return user
   }
 
   get validatePassword(){
     let user = this.users.find((u) => u.name == this.user.name)
-    this.password = user?.password
-    return(this.password == this.user.password)
+    this.password = user?.password;
+    this.userId = user?.id;
+    return(this.password == this.user.password);
   }
 
   onSubmit() {
     let user = this.users.find((u) => u.name == this.user.name)
     
     if(!user){
-      this.showUserError = true
-      this.showPasswordError = false
+      this.showUserError = true;
+      this.showPasswordError = false;
     }else if(user && !this.validatePassword){
-      this.showUserError = false
-      this.showPasswordError = true
+      this.showUserError = false;
+      this.showPasswordError = true;
       console.log(this.password)
     }else if(user && this.validatePassword){
       this.showPasswordError = false;
-      this.showUserError = false
+      this.showUserError = false;
       
-      this.router.navigate(["/home"])
+      this.router.navigate(["/home/", this.userId]);
     }
   }
 

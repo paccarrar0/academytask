@@ -11,8 +11,9 @@ export class TaskService {
   constructor(private _httpClient: HttpClient) {}
   private url = 'http://localhost:3000/tasks';
 
-  getTasks(): Observable<Task[]> {
-    return this._httpClient.get<Task[]>(this.url).pipe(
+  getTasks(userId?: string): Observable<Task[]> {
+    let url = `http://localhost:3000/tasks?userId=${userId}`
+    return this._httpClient.get<Task[]>(url).pipe(
       tap(() => console.log('Dados recebidos com sucesso.')),
       catchError(this.handleError)
     );
