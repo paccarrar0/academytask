@@ -5,19 +5,30 @@
         <span class="input-group-text"
           ><img src="../../assets/icons/pen.svg" alt="pen"
         /></span>
-        <input class="form-control" type="text" placeholder="Nome" maxlength="20" [(ngModel)]="name"/>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Nome"
+          maxlength="20"
+          [(ngModel)]="name"
+        />
       </div>
       <div class="input-group">
         <span class="input-group-text"
           ><img src="../../assets/icons/calendar2-week-fill.svg" alt="pen"
         /></span>
-        <input class="form-control" type="date" [(ngModel)]="date"/>
+        <input
+          class="form-control"
+          type="date"
+          [(ngModel)]="date"
+          value="{{ date }}"
+        />
       </div>
     </div>
     <div class="row mt-2 ms-0">
       <p class="ps-0 mb-1">Prioridade:</p>
 
-      <div class="form-check" >
+      <div class="form-check">
         <input
           class="form-check-input"
           type="radio"
@@ -53,11 +64,17 @@
     </div>
     <div class="row ms-0 mb-4">
       <p class="ps-0 mb-1">Descrição:</p>
-      <textarea class="form-control" name="description" [(ngModel)]="description"></textarea>
+      <textarea
+        class="form-control"
+        name="description"
+        [(ngModel)]="description"
+      ></textarea>
     </div>
     <div class="d-flex justify-content-center gap-3">
-      <button class="submit-button btn" type="submit" (click)="onSubmit()">Salvar</button>
-      <button class="close-button btn" (click)="close()">Cancelar</button>
+      <button class="submit-button btn" type="submit" (click)="onSubmit()">
+        Salvar
+      </button>
+      <button class="close-button btn" (click)="closeModal()">Cancelar</button>
     </div>
   </div>
 </div>

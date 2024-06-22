@@ -1,12 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let task of tasks">
-      <app-card (openNewModal)="openDescModal($event)" (deleteTask)="deleteTask($event)" [task]="task"></app-card>
+      <app-card
+        (openNewModal)="openDescModal($event)"
+        (deleteTask)="deleteTask($event)"
+        [task]="task"
+      ></app-card>
     </div>
   </div>
   <div class="row">
-    <app-new-modal modalId="newModal" (submitTask)="onSubmit($event)"></app-new-modal>
-    <app-desc-modal modalId="descModal" [task]="taskDescription"></app-desc-modal>
+    <app-new-modal
+      modalId="newModal"
+      (submitTask)="onSubmit($event)"
+    ></app-new-modal>
+    <app-desc-modal
+      modalId="descModal"
+      [task]="taskDescription"
+    ></app-desc-modal>
+    <router-outlet></router-outlet>
     <button (click)="openNewModal()" class="button btn">Nova Tarefa</button>
   </div>
 </div>

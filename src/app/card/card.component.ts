@@ -1,17 +1,18 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { DatePipe } from '@angular/common';
+import { RouterLink, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [NgClass, DatePipe],
+  imports: [NgClass, DatePipe, RouterLink],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrl: './card.component.css',
 })
 export class CardComponent {
-
-  constructor(){}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   @Input() task: any;
 
@@ -19,12 +20,17 @@ export class CardComponent {
 
   @Output() deleteTask: EventEmitter<any> = new EventEmitter<any>();
 
+  @Output() _openEditModal: EventEmitter<any> = new EventEmitter<any>();
+
+  openEditModal(taskId: any) {
+    this.router.navigate(['home/edit', taskId]);
+  }
+
   openModal(taskId: number) {
     this.openNewModal.emit(taskId);
   }
 
   deleteCard(taskId: number) {
-    this.deleteTask.emit(taskId)
+    this.deleteTask.emit(taskId);
   }
 }
-

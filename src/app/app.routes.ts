@@ -3,11 +3,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { NewModalComponent } from './new-modal/new-modal.component';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'home:editModal', component: NewModalComponent}
+  {path: 'home', component: HomeComponent, children: [
+    {path: 'edit/:id', component: EditModalComponent}
+  ]},
+  {path: 'home/:editModal', component: NewModalComponent}
 ];

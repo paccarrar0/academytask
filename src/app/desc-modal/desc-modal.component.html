@@ -2,7 +2,12 @@
   <div class="modal-content container gap-2">
     <div class="row">
       <p class="ps-0 mb-1">Descrição:</p>
-      <textarea class="form-control" name="description" rows="15" [value]="task.description"></textarea>
+      <textarea
+        class="form-control"
+        name="description"
+        rows="15"
+        [value]="task.description"
+      ></textarea>
     </div>
     <div class="row text-center mx-5">
       <button class="close-button btn" (click)="close()">Cancelar</button>

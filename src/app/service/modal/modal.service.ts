@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ModalService {
   private modalSubject = new Subject<any>();
 
   openModal(modalId: string) {
     this.modalSubject.next({ action: 'open', id: modalId });
-    console.log('modal service')
   }
 
   closeModal(modalId: string) {

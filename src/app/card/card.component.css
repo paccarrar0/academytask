@@ -15,6 +15,10 @@ p {
   font-size: 0.9rem;
 }
 
+.card {
+  min-height: 113.42px;
+}
+
 .badge {
   font-size: 0.7rem;
 }
@@ -26,11 +30,11 @@ h4 {
 }
 
 .high-priority {
-  background-color: #FF0000;
+  background-color: #ff0000;
 }
 .medium-priority {
-  background-color: #F4C430;
+  background-color: #f4c430;
 }
 .low-priority {
-  background-color: #09C184;
+  background-color: #09c184;
 }

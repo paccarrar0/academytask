@@ -1,4 +1,4 @@
-<div id="teste" class="card m-3 shadow border-1 border-success">
+<div class="card m-3 shadow border-1 border-success">
   <div class="header d-flex justify-content-between">
     <div
       [ngClass]="{
@@ -24,13 +24,15 @@
       <a (click)="deleteCard(task.id)"
         ><img src="../../assets/icons/trash.svg" alt="trash"
       /></a>
-      <a (click)="openModal(task.id)"><img src="../../assets/icons/pencil-square.svg" alt="edit"/></a>
+      <a (click)="openEditModal(task.id)"
+        ><img src="../../assets/icons/pencil-square.svg" alt="edit"
+      /></a>
     </div>
   </div>
   <p class="ms-2">{{ task.name }}</p>
   <div class="mb-2 ms-2 d-flex align-items-center">
     <img src="../../assets/icons/stopwatch.svg" alt="watch" />
-    <h4 class="ms-1">{{ task.date | date:'dd/MM/yyyy' }}</h4>
+    <h4 class="ms-1">{{ task.date | date : "dd/MM/yyyy" }}</h4>
     <img
       class="ms-2"
       src="../../assets/icons/cloud-lightning-rain.svg"

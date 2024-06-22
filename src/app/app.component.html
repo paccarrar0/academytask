@@ -1,5 +1,7 @@
 <header>
-  <app-header *ngIf="router.url !== '/login' && router.url !== '/register'"></app-header>
+  <app-header
+    *ngIf="router.url !== '/login' && router.url !== '/register'"
+  ></app-header>
 </header>
 <main>
   <router-outlet></router-outlet>
