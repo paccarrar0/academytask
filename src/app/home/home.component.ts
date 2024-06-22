@@ -33,28 +33,23 @@ export class HomeComponent implements OnInit {
 
   public tasks!: Task[];
   public itemId!: number;
-  public taskId!: number;
-  public taskDescription: Task = new Task('', '', '', '', '');
+  public taskId!: string;
+  public taskDescription!: string;
+  public taskToShow!: Task;
 
   openNewModal() {
     this.modalService.openModal('newModal');
-  }
-
-  openDescModal(taskId: number) {
-    this.taskId = taskId;
-    this.taskDescription = this.tasks[taskId];
-    this.modalService.openModal('descModal');
   }
 
   loadTasks() {
     this._taskService.getTasks().subscribe((retorno) => {
       this.tasks = retorno.map((item) => {
         return new Task(
-          item.id,
           item.name,
           item.description,
           item.priority,
-          item.date
+          item.date,
+          item.id
         );
       });
     });
@@ -77,7 +72,6 @@ export class HomeComponent implements OnInit {
 
   onSubmit(newTask: Task) {
     let newTaskLocal = newTask;
-    newTaskLocal.id = String(this.tasks.length + 1);
 
     this._taskService.setTasks(newTaskLocal).subscribe(() => {
       this.loadTasks();

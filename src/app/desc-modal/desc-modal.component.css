@@ -18,14 +18,19 @@
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
-  min-width: 15rem
+  min-width: 18rem
 }
 
-.close-button{
-  background-color: #0A8967;
+.submit-button {
+  background-color: #0a8967;
   color: #fff;
 }
 
+.close-button {
+  background-color: #fff;
+  border: solid #0a8967 1px;
+  color: #0a8967;
+}
 textarea {
   border-color: #0A8967;
 }

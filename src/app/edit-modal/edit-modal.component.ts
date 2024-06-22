@@ -1,7 +1,6 @@
 import {
   Component,
   OnInit,
-  OnDestroy,
   Input,
   Output,
   EventEmitter,
@@ -11,7 +10,6 @@ import { TaskService } from '../service/task/task.service';
 import { CommonModule } from '@angular/common';
 import { Task } from '../class/task/task';
 import { ActivatedRoute, Router } from '@angular/router';
-import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-edit-modal',
@@ -76,14 +74,14 @@ export class EditModalComponent implements OnInit {
 
   onSubmit() {
     this.updatedTask = new Task(
-      this.taskId,
       this.name,
       this.description,
       this.priority,
-      this.date
+      this.date,
+      this.taskId
     );
     this.taskService
-      .updateTask(Number(this.taskId), this.updatedTask)
+      .updateTask(this.taskId, this.updatedTask)
       .subscribe(() => {
         this.editTask.emit(this.updatedTask);
         this.closeModal();
@@ -99,11 +97,11 @@ export class EditModalComponent implements OnInit {
         this.priority = task.priority;
         this.date = task.date;
         this.updatedTask = new Task(
-          task.id,
           this.name,
           this.description,
           this.priority,
-          this.date
+          this.date,
+          task.id
         );
       }
     });

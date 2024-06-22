@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private router: Router) {}
 
   @Input() task: any;
 
@@ -26,7 +25,7 @@ export class CardComponent {
     this.router.navigate(['home/edit', taskId]);
   }
 
-  openModal(taskId: number) {
+  openModal(taskId: string) {
     this.openNewModal.emit(taskId);
   }
 

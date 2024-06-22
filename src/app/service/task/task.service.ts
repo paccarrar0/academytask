@@ -39,14 +39,14 @@ export class TaskService {
     });
   }
 
-  updateTask(taskId: number, data: Task): Observable<Task> {
+  updateTask(taskId: string, data: Task): Observable<Task> {
     return this._httpClient.put<Task>(`${this.url}/${taskId}`, data).pipe(
       tap(() => console.log(`Tarefa com ID ${taskId} atualizada com sucesso.`)),
       catchError(this.handleError)
     );
   }
 
-  patchTask(taskId: number, dataToUpdate: Partial<Task>): Observable<Task> {
+  patchTask(taskId: string, dataToUpdate: Partial<Task>): Observable<Task> {
     return this._httpClient
       .patch<Task>(`${this.url}/${taskId}`, dataToUpdate)
       .pipe(
