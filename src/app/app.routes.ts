@@ -6,7 +6,7 @@ import { NewModalComponent } from './new-modal/new-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent, children: [

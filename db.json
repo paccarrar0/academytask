@@ -1,4 +1,16 @@
 {
+  "users": [
+    {
+      "id": "bb8f",
+      "name": "TEste",
+      "password": "Abc1"
+    },
+    {
+      "id": "00a3",
+      "name": "Pedro",
+      "password": "Qwer5"
+    }
+  ],
   "tasks": [
     {
       "id": "d233",
