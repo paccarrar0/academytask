@@ -32,11 +32,12 @@ export class NewModalComponent implements OnInit, OnDestroy {
   public date!: string;
 
   newTask: Task = new Task(
-    '',
     this.name,
     this.description,
     this.priority,
-    this.date
+    this.date,
+    '',
+    ''
   );
 
   constructor(private modalService: ModalService) {}
@@ -59,6 +60,7 @@ export class NewModalComponent implements OnInit, OnDestroy {
       this.date
     );
     this.submitTask.emit(this.newTask);
+    this.close()
   }
 
   ngOnDestroy() {

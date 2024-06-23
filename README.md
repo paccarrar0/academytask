@@ -34,7 +34,7 @@ https://www.figma.com/design/sEZj4z5XjrzIQk7kdHTNVr/AcademyTask?node-id=27-113&t
 - [x] ID16: O aluno criou uma estrutura de navegação aninhada para representar hierarquias de conteúdo.
 - [ ] ID17: O aluno aplicou guardas de rotas para controlar o acesso a rotas específicas da aplicação, assegurando que somente usuários autorizados possam acessar determinadas partes da interface.
 #### RA6 - Realizar requisições assíncronas para serviços web, compreendendo os protocolos e formatos de troca de dados, tratando respostas e erros.
-- [ ] ID18: O aluno fez requisições assíncronas a uma API pública, compreendendo os protocolos HTTP e formatos de dados para no mínimo a operação GET.
+- [x] ID18: O aluno fez requisições assíncronas a uma API pública, compreendendo os protocolos HTTP e formatos de dados para no mínimo a operação GET.
 - [x] ID19: O aluno fez requisições assíncronas a uma API simulada, compreendendo os protocolos HTTP e formatos de dados para as operações GET, POST, PUT, PATCH e DELETE.
 - [x] ID20: O aluno tratou respostas de sucesso e erros das requisições assíncronas de forma apropriada.
 - [x] ID21: O aluno aplicou validações de entrada nos campos do formulário, utilizando técnicas como expressões regulares (REGEX), e apresentou mensagens de erro claras e informativas para auxiliar os usuários a corrigir entradas incorretas.
@@ -48,18 +48,13 @@ https://www.figma.com/design/sEZj4z5XjrzIQk7kdHTNVr/AcademyTask?node-id=27-113&t
 
 ## Manual de execução
 - Clonar o repositório com `git clone`
-- Fazer checkout no branch `develop` que contém as modificações mais recentes
 - Abrir o projeto no editor Visual Studio Code (VS Code)
 - Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto 
 - Instalar as dependências contidas no `package.json`
   - Comando: `npm i`
-- (Opcional) Instalar o JSON Server globalmente disponível em `https://www.npmjs.com/package/json-server`
-  - Comando: `npm i -g json-server` 
-  - É opcional porque a dependência já vem cadastrada no arquivo `package.json` para instalação local na pasta `node_modules`
-- Executar a API Fake (JSON Server) via um dos seguintes comandos: 
-  - Execução via script registrado no `package.json`: `npm run json:server:routes` 
-  - Ou via Execução explícita: `json-server --watch db.json --routes routes.json`
-- O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json` e `routes.json`.
+- Executar a API Fake (JSON Server): 
+  -`json-server --watch db.json`
+- O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json`.
   - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    
 - Abrir um novo terminal pelo VSCode e então executar o projeto Angular
-  - Comando: `ng s -o`
+  - Comando: `ng serve`

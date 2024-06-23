@@ -9,29 +9,68 @@
       "id": "00a3",
       "name": "Pedro",
       "password": "Qwer5"
+    },
+    {
+      "id": "8bba",
+      "name": "Alberto",
+      "password": "Qwer1"
+    },
+    {
+      "id": "fadf",
+      "name": "Xaolin",
+      "password": "Test3"
     }
   ],
   "tasks": [
     {
-      "id": "d233",
-      "name": "TESTE",
-      "description": "TESTETESTETESTETESTE",
+      "id": "b6b8",
+      "name": "Teste",
+      "description": "teste",
       "priority": "Alta",
-      "date": "2024-06-12"
+      "date": "2024-06-23",
+      "weather": [
+        "Clear"
+      ]
     },
     {
-      "id": "6add",
-      "name": "TESTE de merda",
-      "description": "Testando esssa bagaça para saber se este mone de bosta ta funcionando",
-      "priority": "Alta",
-      "date": "2024-06-09"
-    },
-    {
-      "id": "47a1",
-      "name": "RERERERERE",
-      "description": "RRERERERE",
+      "id": "0f5a",
+      "name": "Teste",
+      "description": "TEstando",
       "priority": "Média",
-      "date": "2024-06-16"
+      "date": "2024-06-24",
+      "weather": [
+        "Clouds"
+      ]
+    },
+    {
+      "id": "cb0d",
+      "name": "Tse",
+      "description": "dNao sei o que escrever",
+      "priority": "Média",
+      "date": "2024-06-25",
+      "weather": [
+        "Clouds"
+      ]
+    },
+    {
+      "id": "2afc",
+      "name": "tesajdoajidjaojdoaij",
+      "description": "ccccCCCCCCCCCCCCCCCCCCCCCCCCCCCccccccccccCCCCCCCCCCCCCccccccCCCCCCCCCCccccCCCCCccccCCCCccccCCCCccccCCCCCcccCCCCcccCCCCcccCCCCccCCCCc",
+      "priority": "Média",
+      "date": "2024-06-27",
+      "weather": [
+        "Clouds"
+      ]
+    },
+    {
+      "id": "c6cb",
+      "name": "hffgfgfgf",
+      "description": "fsfsdsf",
+      "priority": "Alta",
+      "date": "2024-06-22",
+      "weather": [
+        "Clear"
+      ]
     }
   ]
 }

@@ -23,6 +23,7 @@ export class CardComponent {
 
   openEditModal(taskId: any) {
     this.router.navigate(['home/edit', taskId]);
+    console.log(this.getWeatherIcon(taskId))
   }
 
   openModal(taskId: string) {
@@ -31,5 +32,24 @@ export class CardComponent {
 
   deleteCard(taskId: number) {
     this.deleteTask.emit(taskId);
+  }
+
+  getWeatherIcon(weatherType: string): string {
+    switch (weatherType) {
+      case 'Clear':
+        return '../../assets/icons/brightness-high.svg';
+      case 'Clouds':
+        return '../../assets/icons/cloud.svg';
+      case 'Rain':
+        return '../../assets/icons/cloud-drizzle.svg';
+      case 'Thunderstorm':
+        return '../../assets/icons/cloud-lightning-rain.svg';
+      case 'Snow':
+        return '../../assets/icons/cloud-snow.svg';
+      case 'Mist':
+        return '../../assets/icons/weather_fog_icon_136028.svg';
+      default:
+        return '../../assets/icons/hourglass-split.svg';
+    }
   }
 }
