@@ -29,9 +29,14 @@ export class RegisterComponent implements OnInit {
   }
 
   get userExist(): boolean {
-    const user = this.users.find((u) => u.name == this.formData.username);
-    return Boolean(user)
+    if (!this.users) {
+      console.error("Users is undefined");
+      return false;
+    }
+    const user = this.users.find((u) => u.name === this.formData.username);
+    return Boolean(user);
   }
+  
 
   onSubmit(): void {
     if (this.passwordsMatch && this.userExist == false) {

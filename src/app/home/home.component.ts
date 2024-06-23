@@ -45,21 +45,24 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        this.getWeather(this.latitude, this.longitude).subscribe((response) => {
-          this.forecast = response;
-          this.loadTasks();
-        });
-      }, (error) => {
-        console.error('Erro ao obter geolocalização:', error);
-        this.loadTasks();
-      });
+    this.loadTasks(); // Carrega as tarefas imediatamente
+
+    if (typeof navigator !== 'undefined' && typeof navigator.geolocation !== 'undefined') {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          this.latitude = position.coords.latitude;
+          this.longitude = position.coords.longitude;
+          this.getWeather(this.latitude, this.longitude).subscribe((response) => {
+            this.forecast = response;
+            this.loadTasks(); // Recarrega as tarefas após obter a previsão do tempo
+          });
+        },
+        (error) => {
+          console.error('Erro ao obter geolocalização:', error);
+        }
+      );
     } else {
-      console.error('Geolocalização não é suportada pelo navegador.');
-      this.loadTasks();
+      console.error('Geolocalização não é suportada ou indisponível pelo navegador.');
     }
   }
 
@@ -104,8 +107,8 @@ export class HomeComponent implements OnInit {
     let newTaskLocal = newTask;
     this._taskService.setTasks(newTaskLocal).subscribe(() => {
       this.loadTasks();
-      location.reload();
     });
+    location.reload();
   }
 
   getWeather(lat: number, lon: number): Observable<any> {
