@@ -1,0 +1,180 @@
+<div class="container text-center">
+  <div class="d-md-none">
+    <div class="row">
+      <img
+        class="mobile-logo col"
+        src="../../assets/images/collorfull-logo.svg"
+        alt="logo"
+        height="80"
+      />
+    </div>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <div class="row mx-3 mb-5">
+        <div class="input-group">
+          <span class="input-group-text">
+            <img src="../../assets/icons/person-fill.svg" alt="icon" />
+          </span>
+          <input
+            id="username-mobile"
+            class="input form-control px-3"
+            type="text"
+            placeholder="Usuário"
+            name="username"
+            [(ngModel)]="formData.username"
+            required
+            pattern="^[a-zA-Z0-9]{4,10}$"
+            #usernameMobile="ngModel"
+          />
+        </div>
+        <div *ngIf="userExist  && (usernameMobile.dirty || usernameMobile.touched)" class="error text-danger">O usuário já existe.</div>
+        <div *ngIf="usernameMobile.invalid && (usernameMobile.dirty || usernameMobile.touched)" class="error text-danger mb-1">
+          <div *ngIf="usernameMobile.errors?.['required']">Nome de usuário é obrigatório.</div>
+          <div *ngIf="usernameMobile.errors?.['pattern']">Nome de usuário inválido.</div>
+        </div>
+
+        <div class="input-group mt-2">
+          <span class="input-group-text">
+            <img src="../../assets/icons/key-fill.svg" alt="icon" />
+          </span>
+          <input
+            id="password-mobile"
+            class="input form-control px-3"
+            type="password"
+            placeholder="Senha"
+            name="password"
+            [(ngModel)]="formData.password"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{4,}$"
+            #passwordMobile="ngModel"
+          />
+        </div>
+        <div *ngIf="passwordMobile.invalid && (passwordMobile.dirty || passwordMobile.touched)" class="error  text-danger mb-1">
+          <div *ngIf="passwordMobile.errors?.['required']">Senha é obrigatória.</div>
+          <div *ngIf="passwordMobile.errors?.['pattern']">Senha deve conter pelo menos 4 caracteres, uma letra maiúscula, uma letra minúscula e um número.</div>
+        </div>
+
+        <div class="input-group mt-2">
+          <span class="input-group-text">
+            <img src="../../assets/icons/key-fill.svg" alt="icon" />
+          </span>
+          <input
+            id="confirm-password-mobile"
+            class="input form-control px-3"
+            type="password"
+            placeholder="Repita a senha"
+            name="confirmPassword"
+            [(ngModel)]="formData.confirmPassword"
+            required
+            #confirmPasswordMobile="ngModel"
+          />
+        </div>
+        <div *ngIf="!passwordsMatch && confirmPasswordMobile.dirty" class="error  text-danger mb-1">
+          As senhas não coincidem.
+        </div>
+      </div>
+      <div class="button row mb-4">
+        <button type="submit" class="btn" [disabled]="!registerForm.form.valid || !passwordsMatch">
+          Cadastrar
+        </button>
+      </div>
+    </form>
+    <div class="row">
+      <p class="mb-0">
+        Já possui cadastro?
+        <br />
+        <a routerLink="/login">Clique aqui!</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="d-md-block d-none block">
+    <div class="row my-4">
+      <img
+        class="logo"
+        src="../../assets/images/collorfull-logo.svg"
+        alt="logo"
+        height="100"
+      />
+    </div>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <div class="row mx-2 mb-4">
+        <div class="input-group">
+          <span class="input-group-text">
+            <img src="../../assets/icons/person-fill.svg" alt="icon" />
+          </span>
+          <input
+            id="username-desktop"
+            class="input form-control px-3"
+            type="text"
+            placeholder="Usuário"
+            name="username"
+            [(ngModel)]="formData.username"
+            required
+            pattern="^[a-zA-Z0-9]{4,10}$"
+            #usernameDesktop="ngModel"
+          />
+        </div>
+        <div *ngIf="usernameDesktop.invalid && (usernameDesktop.dirty || usernameDesktop.touched)" class="error  text-danger mb-1">
+          <div *ngIf="usernameDesktop.errors?.['required']">Nome de usuário é obrigatório.</div>
+          <div *ngIf="usernameDesktop.errors?.['pattern']">Nome de usuário inválido.</div>
+        </div>
+
+        <div class="input-group mt-2">
+          <span class="input-group-text">
+            <img src="../../assets/icons/key-fill.svg" alt="icon" />
+          </span>
+          <input
+            id="password-desktop"
+            class="input form-control px-3"
+            type="password"
+            placeholder="Senha"
+            name="password"
+            [(ngModel)]="formData.password"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{4,}$"
+            #passwordDesktop="ngModel"
+          />
+        </div>
+        <div *ngIf="passwordDesktop.invalid && (passwordDesktop.dirty || passwordDesktop.touched)" class="error  text-danger mb-1">
+          <div *ngIf="passwordDesktop.errors?.['required']">Senha é obrigatória.</div>
+          <div *ngIf="passwordDesktop.errors?.['pattern']">Senha deve conter pelo menos 4 caracteres, uma letra maiúscula, uma letra minúscula e um número.</div>
+        </div>
+
+        <div class="input-group mt-2">
+          <span class="input-group-text">
+            <img src="../../assets/icons/key-fill.svg" alt="icon" />
+          </span>
+          <input
+            id="confirm-password-desktop"
+            class="input form-control px-3"
+            type="password"
+            placeholder="Repita a senha"
+            name="confirmPassword"
+            [(ngModel)]="formData.confirmPassword"
+            required
+            #confirmPasswordDesktop="ngModel"
+          />
+        </div>
+        <div *ngIf="!passwordsMatch && confirmPasswordDesktop.dirty" class="error  text-danger mb-1">
+          As senhas não coincidem.
+        </div>
+      </div>
+      <div class="row mx-2 px-3 mb-4">
+        <button type="submit" class="btn" [disabled]="!registerForm.form.valid || !passwordsMatch">
+          Cadastrar
+        </button>
+      </div>
+    </form>
+    <div class="row mx-4 text-start">
+      <h3>Já possui cadastro?</h3>
+      <br />
+      <p>
+        Caso você ja possa um cadastro, basta usar o botão abaixo para ser
+        redirecionado à tela de login.
+      </p>
+    </div>
+    <div class="row mx-2 px-3 mb-4">
+      <button routerLink="/login" class="btn">Voltar para o login</button>
+    </div>
+  </div>
+</div>

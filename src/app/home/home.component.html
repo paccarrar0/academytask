@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border my-5" *ngIf="loading">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading">
+    <div class="col-lg-6" *ngFor="let task of tasks">
+      <app-card
+        (openNewModal)="descModal.openDescModal($event)"
+        (deleteTask)="deleteTask($event)"
+        [task]="task"
+      ></app-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <app-new-modal
+      modalId="newModal"
+      (submitTask)="onSubmit($event)"
+    ></app-new-modal>
+    <app-desc-modal
+      #descModal
+      modalId="descModal"
+      [task]="taskDescription"
+    ></app-desc-modal>
+    <router-outlet></router-outlet>
+    <button (click)="openNewModal()" class="button btn">Nova Tarefa</button>
+  </div>
+</div>

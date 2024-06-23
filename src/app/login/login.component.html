@@ -1,0 +1,106 @@
+<div class="container text-center">
+  <!--mobile-->
+  <div class="d-md-none">
+    <div class="row">
+      <img
+        class="mobile-logo col"
+        src="../../assets/images/collorfull-logo.svg"
+        alt="logo"
+        height="80"
+      />
+    </div>
+    <div class="row mx-3 mb-5">
+      <div class="input-group">
+        <span class="input-group-text">
+          <img src="../../assets/icons/person-fill.svg" alt="icon" />
+        </span>
+        <input
+          [(ngModel)]="user.name"
+          class="input form-control px-3"
+          type="text"
+          placeholder="Usuário"
+          required
+          #userNameMobile = "ngModel"
+        />
+      </div>
+      <div *ngIf="showUserError" class="error text-danger mb-1">O usuário não  encontrado.</div>
+      <div class="input-group mt-2">
+        <span class="input-group-text">
+          <img src="../../assets/icons/key-fill.svg" alt="icon" />
+        </span>
+        <input
+          [(ngModel)]="user.password"
+          class="input form-control px-3"
+          type="password"
+          placeholder="Senha"
+          #userPasswordMobile = "ngModel"
+        />
+      </div>
+      <div *ngIf="showPasswordError" class="error text-danger">Senha incorreta</div>
+    </div>
+    <div class="button row mb-4">
+      <button class="btn" type="submit" (click)="onSubmit()">Entrar</button>
+    </div>
+    <div class="row">
+      <p class="register-message-mobile mb-0">
+        Ainda não possui cadastro?
+        <br />
+        <a routerLink="/register">Cadastre-se clicando aqui!</a>
+      </p>
+    </div>
+  </div>
+  <!--mobile-->
+
+  <div class="d-md-block d-none block">
+    <div class="row my-4">
+      <img
+        class="logo"
+        src="../../assets/images/collorfull-logo.svg"
+        alt="logo"
+        height="100"
+      />
+    </div>
+    <div class="row mx-2 mb-4">
+      <div class="input-group">
+        <span class="input-group-text">
+          <img src="../../assets/icons/person-fill.svg" alt="icon" />
+        </span>
+        <input
+          [(ngModel)]="user.name"
+          class="input form-control px-3"
+          type="text"
+          placeholder="Usuário"
+          #userNameDesktop = "ngModel"
+        />
+      </div>
+      <div *ngIf="showUserError" class="error text-danger mb-1">O usuário não  encontrado.</div>
+      <div class="input-group mt-2">
+        <span class="input-group-text">
+          <img src="../../assets/icons/key-fill.svg" alt="icon" />
+        </span>
+        <input
+          [(ngModel)]="user.password"
+          class="input form-control px-3"
+          type="password"
+          placeholder="Senha"
+          #userPasswordDesktop = "ngModel"
+        />
+      </div>
+      <div *ngIf="showPasswordError" class="error text-danger mb-1">Senha incorreta</div>
+    </div>
+    <div class="row mx-2 px-3 mb-4">
+      <button class="btn" (click)="onSubmit()">Entrar</button>
+    </div>
+    <div class="row mx-4 text-start">
+      <h3>Ainda não é cadastrado?</h3>
+      <br />
+      <p>
+        Otimize seu seu tempo com o AcademyTask! Tenha uma experiência
+        inteligente e eficiente. Toque abaixo para se cadastrar.
+      </p>
+    </div>
+    <div class="row mx-2 px-3 mb-4">
+      <button routerLink="/register" class="btn">Cadastre-se</button>
+    </div>
+  </div>
+</div>

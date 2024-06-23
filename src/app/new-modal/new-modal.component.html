@@ -1,0 +1,63 @@
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content container gap-2">
+    <div class="row gap-2">
+      <div class="input-group">
+        <span class="input-group-text"
+          ><img src="../../assets/icons/pen.svg" alt="pen"
+        /></span>
+        <input class="form-control" type="text" placeholder="Nome" maxlength="20" [(ngModel)]="name"/>
+      </div>
+      <div class="input-group">
+        <span class="input-group-text"
+          ><img src="../../assets/icons/calendar2-week-fill.svg" alt="pen"
+        /></span>
+        <input class="form-control" type="date" [(ngModel)]="date"/>
+      </div>
+    </div>
+    <div class="row mt-2 ms-0">
+      <p class="ps-0 mb-1">Prioridade:</p>
+
+      <div class="form-check" >
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault1"
+          value="Alta"
+          [(ngModel)]="priority"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Alta </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault2"
+          value="Média"
+          [(ngModel)]="priority"
+        />
+        <label class="form-check-label" for="flexRadioDefault2"> Média </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault2"
+          value="Baixa"
+          [(ngModel)]="priority"
+        />
+        <label class="form-check-label" for="flexRadioDefault2"> Baixa </label>
+      </div>
+    </div>
+    <div class="row ms-0 mb-4">
+      <p class="ps-0 mb-1">Descrição:</p>
+      <textarea class="form-control" name="description" [(ngModel)]="description"></textarea>
+    </div>
+    <div class="d-flex justify-content-center gap-3">
+      <button class="submit-button btn" type="submit" (click)="onSubmit()">Salvar</button>
+      <button class="close-button btn" (click)="close()">Cancelar</button>
+    </div>
+  </div>
+</div>
