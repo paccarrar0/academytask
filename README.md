@@ -4,7 +4,7 @@ AcademyTask é uma aplicação web projetada para ajudar a organizar e priorizar
 
 ## Endereço de Deploy - GitHub Pages
 
-https://github.com/paccarrar0/academytask
+https://paccarrar0.github.io/academytask/
 
 ## Protótipo
 
@@ -47,14 +47,14 @@ https://www.figma.com/design/sEZj4z5XjrzIQk7kdHTNVr/AcademyTask?node-id=27-113&t
 - [ ] ID27: O aluno planejou, configurou e executou o processo de build da aplicação, preparando-a para produção e realizou o deploy em um ambiente de hospedagem, tornando-a prontamente acessível para uso.
 
 ## Manual de execução
-- Clonar o repositório com `git clone`
+- Em um ambiente com o nodejs em versão acima ou igual 20.9.0 instalado e o Git clonar o repositório com `git clone`
 - Abrir o projeto no editor Visual Studio Code (VS Code)
 - Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto 
-- Instalar as dependências contidas no `package.json`
-  - Comando: `npm i`
+- Instalar as dependências contidas no `package.json` com o comando `npm i`
+- Instalar o json-server globalmente com o comando `npm install -g json-server`
 - Executar a API Fake (JSON Server): 
   -`json-server --watch db.json`
-- O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json`.
-  - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    
+- O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json`.   
 - Abrir um novo terminal pelo VSCode e então executar o projeto Angular
   - Comando: `ng serve`
+-Acessar a aplicação através do navegador pelo endereço informado no terminal
