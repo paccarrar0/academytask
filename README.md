@@ -47,7 +47,7 @@ https://www.figma.com/design/sEZj4z5XjrzIQk7kdHTNVr/AcademyTask?node-id=27-113&t
 - [ ] ID27: O aluno planejou, configurou e executou o processo de build da aplicação, preparando-a para produção e realizou o deploy em um ambiente de hospedagem, tornando-a prontamente acessível para uso.
 
 ## Manual de execução
-- Em um ambiente com o nodejs em versão acima ou igual 20.9.0 instalado e o Git clonar o repositório com `git clone`
+- Em um ambiente com o nodejs em versão acima ou igual 20.9.0 instalado e o Git clonar o repositório com `git clone`(branch main é o mais atualizado)
 - Abrir o projeto no editor Visual Studio Code (VS Code)
 - Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto 
 - Instalar as dependências contidas no `package.json` com o comando `npm i`
