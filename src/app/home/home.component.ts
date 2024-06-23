@@ -59,6 +59,8 @@ export class HomeComponent implements OnInit {
         },
         (error) => {
           console.error('Erro ao obter geolocalização:', error);
+          this.loadTasks();
+          this.loading = false;
         }
       );
     } else {

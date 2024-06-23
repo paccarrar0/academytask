@@ -12,5 +12,4 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent, children: [
     {path: 'edit/:id', component: EditModalComponent}
   ]},
-  {path: 'home/:editModal', component: NewModalComponent}
 ];

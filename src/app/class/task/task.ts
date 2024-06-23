@@ -12,6 +12,6 @@ export class Task {
     this.description = description;
     this.priority = priority;
     this.date = date;
-    this.weather = weather
+    this.weather = weather;
   }
 }

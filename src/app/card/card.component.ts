@@ -23,7 +23,6 @@ export class CardComponent {
 
   openEditModal(taskId: any) {
     this.router.navigate(['home/edit', taskId]);
-    console.log(this.getWeatherIcon(taskId))
   }
 
   openModal(taskId: string) {

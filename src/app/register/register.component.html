@@ -26,7 +26,7 @@
             #usernameMobile="ngModel"
           />
         </div>
-        <div *ngIf="userExist  && (usernameMobile.dirty || usernameMobile.touched)" class="error text-danger">O usuário já existe.</div>
+        <div *ngIf="userExist  &&  usernameMobile.dirty" class="error text-danger">O usuário já existe.</div>
         <div *ngIf="usernameMobile.invalid && (usernameMobile.dirty || usernameMobile.touched)" class="error text-danger mb-1">
           <div *ngIf="usernameMobile.errors?.['required']">Nome de usuário é obrigatório.</div>
           <div *ngIf="usernameMobile.errors?.['pattern']">Nome de usuário inválido.</div>
@@ -114,6 +114,7 @@
             #usernameDesktop="ngModel"
           />
         </div>
+        <div *ngIf="userExist  &&  usernameDesktop.dirty" class="error text-danger">O usuário já existe.</div>
         <div *ngIf="usernameDesktop.invalid && (usernameDesktop.dirty || usernameDesktop.touched)" class="error  text-danger mb-1">
           <div *ngIf="usernameDesktop.errors?.['required']">Nome de usuário é obrigatório.</div>
           <div *ngIf="usernameDesktop.errors?.['pattern']">Nome de usuário inválido.</div>
